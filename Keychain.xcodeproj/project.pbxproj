@@ -624,6 +624,7 @@
 				6096E72A1F19099400E6599F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6096E72B1F19099400E6599F /* Build configuration list for PBXNativeTarget "KeychainTests_macOS" */ = {
 			isa = XCConfigurationList;
@@ -632,6 +633,7 @@
 				6096E72D1F19099400E6599F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6096E74A1F1A34DB00E6599F /* Build configuration list for PBXNativeTarget "Keychain_iOS" */ = {
 			isa = XCConfigurationList;
@@ -640,6 +642,7 @@
 				6096E74C1F1A34DB00E6599F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6096E74D1F1A34DB00E6599F /* Build configuration list for PBXNativeTarget "KeychainTests_iOS" */ = {
 			isa = XCConfigurationList;
@@ -648,6 +651,7 @@
 				6096E74F1F1A34DB00E6599F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
