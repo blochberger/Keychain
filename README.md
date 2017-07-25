@@ -6,6 +6,12 @@ Convenient Swift bindings for the [Keychain services](https://developer.apple.co
 
 The project is not supporting many Keychain features. If you want more, create or vote for an issue, or create a pull request. Before creating pull requests, you can discuss the intended change by creating an issue first.
 
+- Repository: https://github.com/blochberger/Keychain
+- Documentation: https://blochberger.github.io/Keychain
+  - macOS: [public](https://blochberger.github.io/Keychain/macos/public), [internal](https://blochberger.github.io/Keychain/macos/internal), [private](https://blochberger.github.io/Keychain/macos/private)
+  - iOS: [public](https://blochberger.github.io/Keychain/iphone/public), [internal](https://blochberger.github.io/Keychain/iphone/internal), [private](https://blochberger.github.io/Keychain/iphone/private)
+- Issues: https://github.com/blochberger/Keychain/issues
+
 ## Examples
 
 ### Generic Passwords
