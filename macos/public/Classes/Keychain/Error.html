@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Error Enum Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+    <script src="../../js/lunr.min.js" defer></script>
+    <script src="../../js/typeahead.jquery.js" defer></script>
+    <script src="../../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Enum/Error" class="dashAnchor"></a>
+
+    <a title="Error Enum Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../../index.html">
+          Keychain Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/blochberger/Keychain">
+            <img class="header-icon" src="../../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../../index.html">Keychain Reference</a>
+      <img class="carat" src="../../img/carat.png" />
+      Error Enum Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Classes/AbstractPasswordItem.html">AbstractPasswordItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Classes/GenericPasswordItem.html">GenericPasswordItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Classes/Keychain.html">Keychain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Classes/Keychain/Error.html">– Error</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Protocols/KeychainItem.html">KeychainItem</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Typealiases.html#/s:8Keychain13KeychainQuery">KeychainQuery</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>Error</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Error</span><span class="p">:</span> <span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span></code></pre>
+
+                </div>
+              </div>
+            <p>Defines errors that might occur during interaction with the systems
+Keychain service.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FOC8Keychain8Keychain5Error12itemNotFoundFMS1_S1_"></a>
+                    <a name="//apple_ref/swift/Element/itemNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FOC8Keychain8Keychain5Error12itemNotFoundFMS1_S1_">itemNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This error indicates that a given item does not exist in the
+Keychain. It should be created first by calling
+<code><a href="../../Classes/Keychain.html#/s:ZFC8Keychain8Keychain5storeFzT8passwordV10Foundation4Data2inCS_19GenericPasswordItem4withGSqSS__T_">store(password:in:with:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">itemNotFound</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L224">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FOC8Keychain8Keychain5Error17itemAlreadyExistsFMS1_S1_"></a>
+                    <a name="//apple_ref/swift/Element/itemAlreadyExists" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FOC8Keychain8Keychain5Error17itemAlreadyExistsFMS1_S1_">itemAlreadyExists</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This error indicates that a given item already exists. Please update
+it by calling <code><a href="../../Classes/Keychain.html#/s:ZFC8Keychain8Keychain6updateFzT8passwordV10Foundation4Data3forCS_19GenericPasswordItem_T_">update(password:for:)</a></code> if you intend to change it.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The error might also indicate that a mandatory attribute was
+not set.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">itemAlreadyExists</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L233">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FOC8Keychain8Keychain5Error19unexpectedQueryDataFMS1_S1_"></a>
+                    <a name="//apple_ref/swift/Element/unexpectedQueryData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FOC8Keychain8Keychain5Error19unexpectedQueryDataFMS1_S1_">unexpectedQueryData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This error indicates that response from the Keychain service did not
+match the expectations. If you see this error, this might indicate a
+bug in this framework. Please report it in
+<a href="https://github.com/blochberger/Keychain/issues">the issue tracker</a>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">unexpectedQueryData</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L241">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FOC8Keychain8Keychain5Error22unexpectedPasswordDataFMS1_S1_"></a>
+                    <a name="//apple_ref/swift/Element/unexpectedPasswordData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FOC8Keychain8Keychain5Error22unexpectedPasswordDataFMS1_S1_">unexpectedPasswordData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This error indicates that the actual password value did not match
+the expected format. If you see this error, this might indicate a
+bug in this framework. Please report it in
+<a href="https://github.com/blochberger/Keychain/issues">the issue tracker</a>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">unexpectedPasswordData</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L249">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FOC8Keychain8Keychain5Error14unhandledErrorFMS1_FT6statusVs5Int32_S1_"></a>
+                    <a name="//apple_ref/swift/Element/unhandledError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FOC8Keychain8Keychain5Error14unhandledErrorFMS1_FT6statusVs5Int32_S1_">unhandledError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a generic error that has not been observed during
+development of the framework. If you see this error, please report
+the circumstances in
+<a href="https://github.com/blochberger/Keychain/issues">the issue tracker</a>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">unhandledError</span><span class="p">(</span><span class="nv">status</span><span class="p">:</span> <span class="kt">OSStatus</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L257">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2017 <a class="link" href="https://github.com/blochberger" target="_blank" rel="external">Maximilian Blochberger</a>. All rights reserved. (Last updated: 2017-08-25)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
