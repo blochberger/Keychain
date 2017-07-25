@@ -1,5 +1,7 @@
 # Keychain
 
+![Coverage](https://blochberger.github.io/Keychain/macos/coverage.svg) ![Documentation](https://blochberger.github.io/Keychain/macos/public/badge.svg)
+
 Convenient Swift bindings for the [Keychain services](https://developer.apple.com/documentation/security/keychain_services).
 
 The project is not supporting many Keychain features. If you want more, create or vote for an issue, or create a pull request. Before creating pull requests, you can discuss the intended change by creating an issue first.
