@@ -184,7 +184,7 @@ public class GenericPasswordItem: AbstractPasswordItem {
 extension GenericPasswordItem: KeychainItem {
 	/**
 		The Keychain type of a generic password, which is
-		[`kSecClassGenericPassword`](https://developer.apple.com/documentation/security/ksecclassgenericpassword)
+		[`kSecClassGenericPassword`](https://developer.apple.com/documentation/security/ksecclassgenericpassword).
 	*/
 	public var type: CFString { get { return kSecClassGenericPassword } }
 
