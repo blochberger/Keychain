@@ -182,8 +182,15 @@ public class GenericPasswordItem: AbstractPasswordItem {
 }
 
 extension GenericPasswordItem: KeychainItem {
+	/**
+		The Keychain type of a generic password, which is
+		[`kSecClassGenericPassword`](https://developer.apple.com/documentation/security/ksecclassgenericpassword)
+	*/
 	public var type: CFString { get { return kSecClassGenericPassword } }
 
+	/**
+		Constructs a keychain query for a generic password.
+	*/
 	public var query: [String: AnyObject] {
 		get {
 			var result = [String: AnyObject]()
@@ -204,11 +211,49 @@ extension GenericPasswordItem: KeychainItem {
 */
 public class Keychain {
 
+	/**
+		Defines errors that might occur during interaction with the systems
+		Keychain service.
+	*/
 	public enum Error: Swift.Error {
+		/**
+			This error indicates that a given item does not exist in the
+			Keychain. It should be created first by calling
+			`store(password:in:with:)`.
+		*/
 		case itemNotFound
+
+		/**
+			This error indicates that a given item already exists. Please update
+			it by calling `update(password:for:)` if you intend to change it.
+		
+			- note: The error might also indicate that a mandatory attribute was
+				not set.
+		*/
 		case itemAlreadyExists
+
+		/**
+			This error indicates that response from the Keychain service did not
+			match the expectations. If you see this error, this might indicate a
+			bug in this framework. Please report it in
+			[the issue tracker](https://github.com/blochberger/Keychain/issues).
+		*/
 		case unexpectedQueryData
+
+		/**
+			This error indicates that the actual password value did not match
+			the expected format. If you see this error, this might indicate a
+			bug in this framework. Please report it in
+			[the issue tracker](https://github.com/blochberger/Keychain/issues).
+		*/
 		case unexpectedPasswordData
+
+		/**
+			This is a generic error that has not been observed during
+			development of the framework. If you see this error, please report
+			the circumstances in
+			[the issue tracker](https://github.com/blochberger/Keychain/issues).
+		*/
 		case unhandledError(status: OSStatus)
 	}
 
@@ -242,7 +287,6 @@ public class Keychain {
 				return .unhandledError(status: status)
 		}
 	}
-
 
 	/**
 		Adds a new generic password to the Keychain.
