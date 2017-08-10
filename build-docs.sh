@@ -68,8 +68,8 @@ if [ ${RUN_TESTS} = true ]; then
 	xcodebuild\
 		-quiet\
 		-sdk macosx\
-		-project "Keychain.xcodeproj"\
-		-scheme "Keychain_macOS"\
+		-project "${MODULE}.xcodeproj"\
+		-scheme "${MODULE}_macOS"\
 		-enableCodeCoverage YES\
 		-derivedDataPath "build"\
 		clean\
