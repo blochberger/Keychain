@@ -30,11 +30,11 @@ while [[ $# -gt 0 ]]; do
 			shift
 			;;
 		-h|--help)
-			echo "Usage: [--commit] [--help]" >&2
+			echo "Usage: [--test] [--commit] [-h|--help]" >&2
 			exit 0
 			;;
 		*)
-			echo "Usage: [--commit] [-h|--help]" >&2
+			echo "Usage: [--test] [--commit] [-h|--help]" >&2
 			echo "Unknown option: ${key}" >&2
 			exit 1
 			;;
