@@ -13,8 +13,8 @@ class KeychainTests: XCTestCase {
 	*/
     func testGenericPasswords() {
 		let account = UUID().uuidString
-		let password1 = "foo".data(using: .utf8)!
-		let password2 = "bar".data(using: .utf8)!
+		let password1 = "foo"
+		let password2 = "bar"
 		let item = GenericPasswordItem(for: "KeychainTest", using: account)
 
 		// Store password1
@@ -22,7 +22,7 @@ class KeychainTests: XCTestCase {
 
 		// Retrieve password1
 		do {
-			let actualPassword = try Keychain.retrievePassword(for: item)
+			let actualPassword: String = try Keychain.retrievePassword(for: item)!
 			XCTAssertEqual(actualPassword, password1)
 		} catch {
 			XCTFail("Error occurred: \(error)")
@@ -33,7 +33,7 @@ class KeychainTests: XCTestCase {
 
 		// Retrieve password2
 		do {
-			let actualPassword = try Keychain.retrievePassword(for: item)
+			let actualPassword: String = try Keychain.retrievePassword(for: item)!
 			XCTAssertEqual(actualPassword, password2)
 		} catch {
 			XCTFail("Error occurred: \(error)")

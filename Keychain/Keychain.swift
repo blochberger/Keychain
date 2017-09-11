@@ -312,6 +312,20 @@ public class Keychain {
 	}
 
 	/**
+		Adds a new generic password to the Keychain.
+
+		If the item already exists the `itemAlreadyExists` error will be thrown.
+
+		- parameters:
+			- password: The actual password that should be stored securely.
+			- item: The item that should contain the password.
+			- label: A label for the item.
+	*/
+	public static func store(password: String, in item: GenericPasswordItem, with label: String? = nil) throws {
+		try store(password: Data(password.utf8), in: item, with: label)
+	}
+
+	/**
 		Updates the generic password for a given item.
 	
 		- parameters:
@@ -328,6 +342,17 @@ public class Keychain {
 		guard status == noErr else {
 			throw error(from: status)!
 		}
+	}
+
+	/**
+		Updates the generic password for a given item.
+
+		- parameters:
+			- password: The new password.
+			- item: The item, that should be updated.
+	*/
+	public static func update(password: String, for item: GenericPasswordItem) throws {
+		try update(password: Data(password.utf8), for: item)
 	}
 
 	/**
@@ -364,6 +389,20 @@ public class Keychain {
 		}
 
 		return password
+	}
+
+	/**
+		Retrieve a generic password for a given item.
+
+		- parameters:
+			- item: The item, for which the password should be retrieved.
+
+		- returns:
+			The password stored for the given item.
+	*/
+	public static func retrievePassword(for item: GenericPasswordItem) throws -> String? {
+		let password: Data = try retrievePassword(for: item)
+		return String(bytes: password, encoding: .utf8)
 	}
 
 	/**
