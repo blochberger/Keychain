@@ -1,6 +1,22 @@
 import XCTest
 import Keychain
 
+extension Keychain.Error: Equatable {
+	public static func ==(lhs: Keychain.Error, rhs: Keychain.Error) -> Bool {
+		switch (lhs, rhs) {
+			case (.itemNotFound, .itemNotFound): fallthrough
+			case (.itemAlreadyExists, .itemAlreadyExists): fallthrough
+			case (.unexpectedQueryData, .unexpectedQueryData): fallthrough
+			case (.unexpectedPasswordData, .unexpectedPasswordData):
+				return true
+			case (.unhandledError(let lhsStatus), .unhandledError(let rhsStatus)):
+				return lhsStatus == rhsStatus
+			default:
+				return false
+		}
+	}
+}
+
 class KeychainTests: XCTestCase {
 
 	/**
@@ -19,8 +35,28 @@ class KeychainTests: XCTestCase {
 
 		var actualPassword: String! = nil
 
+		// Retrieve non-existing password
+		XCTAssertThrowsError(actualPassword = try Keychain.retrievePassword(for: item)) {
+			XCTAssertEqual($0 as? Keychain.Error, Keychain.Error.itemNotFound)
+		}
+
+		// Update non-existing password
+		XCTAssertThrowsError(try Keychain.update(password: password1, for: item)) {
+			XCTAssertEqual($0 as? Keychain.Error, Keychain.Error.itemNotFound)
+		}
+
+		// Delete non-existing password
+		XCTAssertThrowsError(try Keychain.delete(item: item)) {
+			XCTAssertEqual($0 as? Keychain.Error, Keychain.Error.itemNotFound)
+		}
+
 		// Store password1
 		XCTAssertNoThrow(try Keychain.store(password: password1, in: item))
+
+		// Store existing password
+		XCTAssertThrowsError(try Keychain.store(password: password2, in: item)) {
+			XCTAssertEqual($0 as? Keychain.Error, Keychain.Error.itemAlreadyExists)
+		}
 
 		// Retrieve password1
 		actualPassword = nil
