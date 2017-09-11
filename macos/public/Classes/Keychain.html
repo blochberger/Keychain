@@ -136,7 +136,7 @@ Keychain service.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L218-L258">Show on GitHub</a>
+                        <a href="https://github.com/blochberger/Keychain/blob/5a46a607f3221743a59479ad213945a90a99be10/Keychain/Keychain.swift#L218-L258">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -211,7 +211,82 @@ Keychain service.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L301-L312">Show on GitHub</a>
+                        <a href="https://github.com/blochberger/Keychain/blob/5a46a607f3221743a59479ad213945a90a99be10/Keychain/Keychain.swift#L301-L312">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC8Keychain8Keychain5storeFzT8passwordSS2inCS_19GenericPasswordItem4withGSqSS__T_"></a>
+                    <a name="//apple_ref/swift/Method/store(password:in:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC8Keychain8Keychain5storeFzT8passwordSS2inCS_19GenericPasswordItem4withGSqSS__T_">store(password:in:with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a new generic password to the Keychain.</p>
+
+<p>If the item already exists the <code>itemAlreadyExists</code> error will be thrown.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">store</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">in</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/GenericPasswordItem.html">GenericPasswordItem</a></span><span class="p">,</span> <span class="n">with</span> <span class="nv">label</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The actual password that should be stored securely.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The item that should contain the password.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>label</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A label for the item.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/5a46a607f3221743a59479ad213945a90a99be10/Keychain/Keychain.swift#L324-L326">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -272,7 +347,68 @@ Keychain service.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L321-L331">Show on GitHub</a>
+                        <a href="https://github.com/blochberger/Keychain/blob/5a46a607f3221743a59479ad213945a90a99be10/Keychain/Keychain.swift#L335-L345">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC8Keychain8Keychain6updateFzT8passwordSS3forCS_19GenericPasswordItem_T_"></a>
+                    <a name="//apple_ref/swift/Method/update(password:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC8Keychain8Keychain6updateFzT8passwordSS3forCS_19GenericPasswordItem_T_">update(password:for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the generic password for a given item.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">for</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/GenericPasswordItem.html">GenericPasswordItem</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The new password.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The item, that should be updated.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/5a46a607f3221743a59479ad213945a90a99be10/Keychain/Keychain.swift#L354-L356">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -325,7 +461,60 @@ Keychain service.</p>
                         <p>The password stored for the given item.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L342-L367">Show on GitHub</a>
+                        <a href="https://github.com/blochberger/Keychain/blob/5a46a607f3221743a59479ad213945a90a99be10/Keychain/Keychain.swift#L367-L392">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC8Keychain8Keychain16retrievePasswordFzT3forCS_19GenericPasswordItem_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/retrievePassword(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC8Keychain8Keychain16retrievePasswordFzT3forCS_19GenericPasswordItem_GSqSS_">retrievePassword(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieve a generic password for a given item.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">retrievePassword</span><span class="p">(</span><span class="k">for</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/GenericPasswordItem.html">GenericPasswordItem</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The item, for which the password should be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The password stored for the given item.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/5a46a607f3221743a59479ad213945a90a99be10/Keychain/Keychain.swift#L403-L406">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -374,7 +563,7 @@ Keychain service.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/blochberger/Keychain/blob/9c57e020bc0d33669e069b631dc1743e42d389f3/Keychain/Keychain.swift#L375-L381">Show on GitHub</a>
+                        <a href="https://github.com/blochberger/Keychain/blob/5a46a607f3221743a59479ad213945a90a99be10/Keychain/Keychain.swift#L414-L420">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -387,7 +576,7 @@ Keychain service.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/blochberger" target="_blank" rel="external">Maximilian Blochberger</a>. All rights reserved. (Last updated: 2017-08-25)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/blochberger" target="_blank" rel="external">Maximilian Blochberger</a>. All rights reserved. (Last updated: 2017-09-11)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
