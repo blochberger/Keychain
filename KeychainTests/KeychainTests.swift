@@ -17,27 +17,23 @@ class KeychainTests: XCTestCase {
 		let password2 = "bar"
 		let item = GenericPasswordItem(for: "KeychainTest", using: account)
 
+		var actualPassword: String! = nil
+
 		// Store password1
 		XCTAssertNoThrow(try Keychain.store(password: password1, in: item))
 
 		// Retrieve password1
-		do {
-			let actualPassword: String = try Keychain.retrievePassword(for: item)!
-			XCTAssertEqual(actualPassword, password1)
-		} catch {
-			XCTFail("Error occurred: \(error)")
-		}
+		actualPassword = nil
+		XCTAssertNoThrow(actualPassword = try Keychain.retrievePassword(for: item))
+		XCTAssertEqual(actualPassword, password1)
 
 		// Update password1 to password2
 		XCTAssertNoThrow(try Keychain.update(password: password2, for: item))
 
 		// Retrieve password2
-		do {
-			let actualPassword: String = try Keychain.retrievePassword(for: item)!
-			XCTAssertEqual(actualPassword, password2)
-		} catch {
-			XCTFail("Error occurred: \(error)")
-		}
+		actualPassword = nil
+		XCTAssertNoThrow(actualPassword = try Keychain.retrievePassword(for: item))
+		XCTAssertEqual(actualPassword, password2)
 
 		// Delete item
 		XCTAssertNoThrow(try Keychain.delete(item: item))
