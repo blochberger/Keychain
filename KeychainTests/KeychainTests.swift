@@ -73,6 +73,30 @@ class KeychainTests: XCTestCase {
 
 		// Delete item
 		XCTAssertNoThrow(try Keychain.delete(item: item))
+
+		// Retrieve non-existing password
+		XCTAssertThrowsError(actualPassword = try Keychain.retrievePassword(for: item)) {
+			XCTAssertEqual($0 as? Keychain.Error, Keychain.Error.itemNotFound)
+		}
+
+		// Create a new password
+		XCTAssertNoThrow(try Keychain.updateOrCreate(password: password1, for: item))
+
+		// Retrieve password
+		actualPassword = nil
+		XCTAssertNoThrow(actualPassword = try Keychain.retrievePassword(for: item))
+		XCTAssertEqual(actualPassword, password1)
+
+		// Update password1
+		XCTAssertNoThrow(try Keychain.updateOrCreate(password: password2, for: item))
+
+		// Retrieve password2
+		actualPassword = nil
+		XCTAssertNoThrow(actualPassword = try Keychain.retrievePassword(for: item))
+		XCTAssertEqual(actualPassword, password2)
+
+		// Delete item
+		XCTAssertNoThrow(try Keychain.delete(item: item))
     }
 
 }

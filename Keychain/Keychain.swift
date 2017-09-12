@@ -356,6 +356,34 @@ public class Keychain {
 	}
 
 	/**
+		Convenience function that updates the password if it exists or creates
+		it otherwise.
+
+		- parameters:
+			- password: The new password.
+			- item:	The item, that should be updated or created.
+	*/
+	public static func updateOrCreate(password: Data, for item: GenericPasswordItem) throws {
+		do {
+			try update(password: password, for: item)
+		} catch Error.itemNotFound {
+			try store(password: password, in: item)
+		}
+	}
+
+	/**
+		Convenience function that updates the password if it exists or creates
+		it otherwise.
+
+		- parameters:
+			- password: The new password.
+			- item:	The item, that should be updated or created.
+	*/
+	public static func updateOrCreate(password: String, for item: GenericPasswordItem) throws {
+		try updateOrCreate(password: Data(password.utf8), for: item)
+	}
+
+	/**
 		Retrieve a generic password for a given item.
 	
 		- parameters:
