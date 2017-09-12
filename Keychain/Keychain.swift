@@ -44,7 +44,7 @@ public protocol KeychainItem {
 
 	/**
 		The class/type of the Keychain item.
-	
+
 		- see: [`kSecClass`](https://developer.apple.com/documentation/security/ksecclass)
 	*/
 	var type: CFString { get }
@@ -66,7 +66,7 @@ public class AbstractPasswordItem {
 	/**
 		The account used with a given service or on a given web site, for which
 		for which the password is used.
-	
+
 		- see: [`kSecAttrAccount`](https://developer.apple.com/documentation/security/ksecattraccount)
 	*/
 	public let account: String?
@@ -74,7 +74,7 @@ public class AbstractPasswordItem {
 	/**
 		A comment for the item stored in the Keychain. This value is not stored
 		securely and can be read without authorization.
-	
+
 		- see: [`kSecAttrComment`](https://developer.apple.com/documentation/security/ksecattrcomment)
 	*/
 	public let comment: String?
@@ -85,7 +85,7 @@ public class AbstractPasswordItem {
 		items. The default value shown there depends on the items `type`, e.g.,
 		"application password" for generic passwords, or "Internet password" for
 		internet passwords.
-	
+
 		- see: [`kSecAttrDescription`](https://developer.apple.com/documentation/security/ksecattrdescription)
 	*/
 	public let description: String?
@@ -142,7 +142,7 @@ public class GenericPasswordItem: AbstractPasswordItem {
 	/**
 		The service for which the password is used. This can simply be your
 		application.
-	
+
 		- see: [`kSecAttrService`](https://developer.apple.com/documentation/security/ksecattrservice)
 	*/
 	public let service: String
@@ -226,7 +226,7 @@ public class Keychain {
 		/**
 			This error indicates that a given item already exists. Please update
 			it by calling `update(password:for:)` if you intend to change it.
-		
+
 			- note: The error might also indicate that a mandatory attribute was
 				not set.
 		*/
@@ -263,7 +263,7 @@ public class Keychain {
 
 		- parameters:
 			- status: The status code of a Keychain service function call.
-	
+
 		- returns:
 			The `Error` corresponding to the given status code, `nil` else.
 
@@ -290,7 +290,7 @@ public class Keychain {
 
 	/**
 		Adds a new generic password to the Keychain.
-	
+
 		If the item already exists the `itemAlreadyExists` error will be thrown.
 
 		- parameters:
@@ -327,7 +327,7 @@ public class Keychain {
 
 	/**
 		Updates the generic password for a given item.
-	
+
 		- parameters:
 			- password: The new password.
 			- item: The item, that should be updated.
@@ -385,10 +385,10 @@ public class Keychain {
 
 	/**
 		Retrieve a generic password for a given item.
-	
+
 		- parameters:
 			- item: The item, for which the password should be retrieved.
-	
+
 		- returns:
 			The password stored for the given item.
 	*/
