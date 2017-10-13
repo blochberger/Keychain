@@ -5,9 +5,7 @@ extension Keychain.Error: Equatable {
 	public static func ==(lhs: Keychain.Error, rhs: Keychain.Error) -> Bool {
 		switch (lhs, rhs) {
 			case (.itemNotFound, .itemNotFound): fallthrough
-			case (.itemAlreadyExists, .itemAlreadyExists): fallthrough
-			case (.unexpectedQueryData, .unexpectedQueryData): fallthrough
-			case (.unexpectedPasswordData, .unexpectedPasswordData):
+			case (.itemAlreadyExists, .itemAlreadyExists):
 				return true
 			case (.unhandledError(let lhsStatus), .unhandledError(let rhsStatus)):
 				return lhsStatus == rhsStatus

@@ -23,21 +23,6 @@ fileprivate func set<T>(_ query: inout KeychainQuery, key: CFString, value: T?) 
 }
 
 /**
-	Convenience function for getting specific values for Keychain queries.
-
-	- parameters:
-		- query: The query, from which a value should be retrieved.
-		- key: The key/name of the attribute, whoose value should be retrieved.
-
-	- returns:
-		The value for the attribute with the name/key `key` if `key` exists,
-		`nil` else.
-*/
-fileprivate func get(_ query: KeychainQuery, key: CFString) -> AnyObject? {
-	return query[key as String]
-}
-
-/**
 	A general API for Keychain items.
 */
 public protocol KeychainItem {
@@ -233,22 +218,6 @@ public class Keychain {
 		case itemAlreadyExists
 
 		/**
-			This error indicates that response from the Keychain service did not
-			match the expectations. If you see this error, this might indicate a
-			bug in this framework. Please report it in
-			[the issue tracker](https://github.com/blochberger/Keychain/issues).
-		*/
-		case unexpectedQueryData
-
-		/**
-			This error indicates that the actual password value did not match
-			the expected format. If you see this error, this might indicate a
-			bug in this framework. Please report it in
-			[the issue tracker](https://github.com/blochberger/Keychain/issues).
-		*/
-		case unexpectedPasswordData
-
-		/**
 			This is a generic error that has not been observed during
 			development of the framework. If you see this error, please report
 			the circumstances in
@@ -396,7 +365,6 @@ public class Keychain {
 		var query = item.query
 
 		set(&query, key: kSecMatchLimit, value: kSecMatchLimitOne)
-		set(&query, key: kSecReturnAttributes, value: kCFBooleanTrue)
 		set(&query, key: kSecReturnData, value: kCFBooleanTrue)
 
 		var queryResult: AnyObject?
@@ -408,15 +376,7 @@ public class Keychain {
 			throw error(from: status)!
 		}
 
-		guard let retrievedItem = queryResult as? KeychainQuery else {
-			throw Error.unexpectedQueryData
-		}
-
-		guard let password = get(retrievedItem, key: kSecValueData) as? Data else {
-			throw Error.unexpectedPasswordData
-		}
-
-		return password
+		return queryResult as! Data
 	}
 
 	/**
