@@ -26,13 +26,13 @@ let label = "\(account)@\(service)" // Descriptive name
 let item = GenericPasswordItem(for: service, using: account, with: label)
 
 // Store password
-try Keychain.store(password: "foo".data(using: .utf8)!, in: item)
+try Keychain.store(password: Data("foo".utf8), in: item)
 
 // Retrieve password
 let password = try Keychain.retrievePassword(for: item)
 
 // Update password
-try Keychain.update(password: "bar".data(using: .utf8)!, for: item)
+try Keychain.update(password: Data("bar".utf8), for: item)
 
 // Delete item
 try Keychain.delete(item: item)
