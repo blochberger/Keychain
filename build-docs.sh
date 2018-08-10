@@ -75,9 +75,7 @@ if [ ${RUN_TESTS} = true ]; then
 		clean\
 		test
 
-	xcov-core\
-		--source build/Logs/Test/*.xccoverage\
-		--output build/coverage.json
+	xcrun xccov view --json build/Logs/Test/*.xccovreport > build/coverage.json
 
 	COVERAGE=$(
 		python3 "extract_coverage.py" "${MODULE}.framework" < build/coverage.json
