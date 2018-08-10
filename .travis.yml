@@ -1,0 +1,10 @@
+language: swift
+os: osx
+xcode_project: Keychain.xcodeproj
+
+matrix:
+  include:
+    - name: "macOS"
+      xcode_scheme: KeychainTests_macOS
+    - name: "iOS"
+      xcode_scheme: KeychainTests_iOS
