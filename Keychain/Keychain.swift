@@ -234,15 +234,15 @@ public class Keychain {
 			- status: The status code of a Keychain service function call.
 
 		- returns:
-			The `Error` corresponding to the given status code, `nil` else.
+			The `Error` corresponding to the given status code.
 
-		- postcondition:
-			The return value is `nil` if and only if `status` is `noErr` (0).
+		- precondition:
+			The `status` must not be `noErr` (0).
 	*/
-	private static func error(from status: OSStatus) -> Error? {
+	private static func error(from status: OSStatus) -> Error {
+		precondition(status != noErr)
+
 		switch status {
-			case noErr:
-				return nil
 			case errSecItemNotFound:
 				return .itemNotFound
 			case errSecDuplicateItem:
@@ -276,7 +276,7 @@ public class Keychain {
 		let status = SecItemAdd(query as CFDictionary, nil)
 
 		guard status == noErr else {
-			throw error(from: status)!
+			throw error(from: status)
 		}
 	}
 
@@ -309,7 +309,7 @@ public class Keychain {
 		let status = SecItemUpdate(item.query as CFDictionary, attributesToUpdate as CFDictionary)
 
 		guard status == noErr else {
-			throw error(from: status)!
+			throw error(from: status)
 		}
 	}
 
@@ -373,7 +373,7 @@ public class Keychain {
 		}
 
 		guard status == noErr else {
-			throw error(from: status)!
+			throw error(from: status)
 		}
 
 		return queryResult as! Data
@@ -403,7 +403,7 @@ public class Keychain {
 		let status = SecItemDelete(item.query as CFDictionary)
 
 		guard status == noErr else {
-			throw error(from: status)!
+			throw error(from: status)
 		}
 	}
 
