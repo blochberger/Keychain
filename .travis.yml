@@ -1,12 +1,11 @@
 language: swift
 os: osx
-xcode_project: Keychain.xcodeproj
 
 matrix:
   include:
     - name: "macOS"
-      xcode_sdk: macosx10.13
-      xcode_scheme: KeychainTests_macOS
+      script:
+        - xcodebuild test -sdk macosx -project Keychain.xcodeproj -scheme Keychain_macOS
     - name: "iOS"
-      xcode_sdk: iphonesimulator11.4
-      xcode_scheme: KeychainTests_iOS
+      script:
+       - xcodebuild test -sdk iphonesimulator -project Keychain.xcodeproj -scheme Keychain_iOS CODE_SIGNING_REQUIRED=NO
