@@ -100,6 +100,11 @@ if [ ${RUN_TESTS} = true ]; then
 		--progress-bar\
 		--output "${OUTPUT_DIR}/macos/coverage.svg"\
 		"https://img.shields.io/badge/coverage-${COVERAGE}%25-${COLOR}.svg"
+
+	xcov\
+		--html_report\
+		--scheme "${MODULE}_macOS"\
+		--output_directory "${OUTPUT_DIR}/macos/coverage"
 fi
 
 # Commit results
