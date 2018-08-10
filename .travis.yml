@@ -5,6 +5,8 @@ xcode_project: Keychain.xcodeproj
 matrix:
   include:
     - name: "macOS"
+      xcode_sdk: macosx10.13
       xcode_scheme: KeychainTests_macOS
     - name: "iOS"
+      xcode_sdk: iphonesimulator11.4
       xcode_scheme: KeychainTests_iOS
