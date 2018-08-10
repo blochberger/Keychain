@@ -1,6 +1,6 @@
 # Keychain
 
-[![Coverage](https://blochberger.github.io/Keychain/macos/coverage.svg)](https://blochberger.github.io/Keychain/macos/coverage/index.html) [![Documentation](https://blochberger.github.io/Keychain/macos/public/badge.svg)](https://blochberger.github.io/Keychain)
+[![Build Status](https://travis-ci.org/blochberger/Keychain.svg?branch=master)](https://travis-ci.org/blochberger/Keychain) [![Coverage](https://blochberger.github.io/Keychain/macos/coverage.svg)](https://blochberger.github.io/Keychain/macos/coverage/index.html) [![Documentation](https://blochberger.github.io/Keychain/macos/public/badge.svg)](https://blochberger.github.io/Keychain)
 
 Convenient Swift bindings for the [Keychain services](https://developer.apple.com/documentation/security/keychain_services).
 
