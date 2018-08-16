@@ -25,7 +25,7 @@ class KeychainTests: XCTestCase {
 			entry is "KeychainTest". To avoid clashes with existing entries, a
 			unique account name is chosen for each execution.
 	*/
-    func testGenericPasswords() {
+	func testGenericPasswords() {
 		let account = UUID().uuidString
 		let password1 = "foo"
 		let password2 = "bar"
@@ -95,6 +95,6 @@ class KeychainTests: XCTestCase {
 
 		// Delete item
 		XCTAssertNoThrow(try Keychain.delete(item: item))
-    }
+	}
 
 }
