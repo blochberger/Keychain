@@ -201,6 +201,39 @@ public class Keychain {
 		Keychain service.
 	*/
 	public enum Error: Swift.Error {
+
+		/**
+			Turn an `OSStatus` status code, which is returned from calls to the
+			Keychain services, into a type-safe error.
+
+			- precondition:
+				The `status` must not be `noErr` (0).
+
+			- parameters:
+				- status: The status code of a Keychain service function call.
+
+			- returns:
+				The `Error` corresponding to the given status code.
+		*/
+		public init(_ status: OSStatus) {
+			precondition(status != noErr)
+
+			switch status {
+				case errSecItemNotFound:
+					self = .itemNotFound
+				case errSecDuplicateItem:
+					/*
+						This error could also mean, that some mandatory
+						attribute was not set, e.g., if the `kSecAttrService`
+						was not set for items of class
+						`kSecClassGenericPassword`.
+					*/
+					self = .itemAlreadyExists
+				default:
+					self = .unhandledError(status: status)
+			}
+		}
+
 		/**
 			This error indicates that a given item does not exist in the
 			Keychain. It should be created first by calling
@@ -227,37 +260,6 @@ public class Keychain {
 	}
 
 	/**
-		Helper function, that determines the type-safe errors from status codes
-		of calls to the Keychain services.
-
-		- parameters:
-			- status: The status code of a Keychain service function call.
-
-		- returns:
-			The `Error` corresponding to the given status code.
-
-		- precondition:
-			The `status` must not be `noErr` (0).
-	*/
-	private static func error(from status: OSStatus) -> Error {
-		precondition(status != noErr)
-
-		switch status {
-			case errSecItemNotFound:
-				return .itemNotFound
-			case errSecDuplicateItem:
-				/*
-					This error could also mean, that some mandatory attribute
-					was not set, e.g., if the `kSecAttrService` was not set for
-					items of class `kSecClassGenericPassword`.
-				*/
-				return .itemAlreadyExists
-			default:
-				return .unhandledError(status: status)
-		}
-	}
-
-	/**
 		Adds a new generic password to the Keychain.
 
 		If the item already exists the `itemAlreadyExists` error will be thrown.
@@ -276,7 +278,7 @@ public class Keychain {
 		let status = SecItemAdd(query as CFDictionary, nil)
 
 		guard status == noErr else {
-			throw error(from: status)
+			throw Error(status)
 		}
 	}
 
@@ -309,7 +311,7 @@ public class Keychain {
 		let status = SecItemUpdate(item.query as CFDictionary, attributesToUpdate as CFDictionary)
 
 		guard status == noErr else {
-			throw error(from: status)
+			throw Error(status)
 		}
 	}
 
@@ -373,7 +375,7 @@ public class Keychain {
 		}
 
 		guard status == noErr else {
-			throw error(from: status)
+			throw Error(status)
 		}
 
 		return queryResult as! Data
@@ -403,7 +405,7 @@ public class Keychain {
 		let status = SecItemDelete(item.query as CFDictionary)
 
 		guard status == noErr else {
-			throw error(from: status)
+			throw Error(status)
 		}
 	}
 
