@@ -109,6 +109,65 @@ Keychain service.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:8KeychainAAC5ErrorOADs5Int32Vcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8KeychainAAC5ErrorOADs5Int32Vcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Turn an <code>OSStatus</code> status code, which is returned from calls to the
+Keychain services, into a type-safe error.</p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <p>The <code>status</code> must not be <code>noErr</code> (0).</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">OSStatus</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>status</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The status code of a Keychain service function call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The <code>Error</code> corresponding to the given status code.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/blochberger/Keychain/blob/0513c1c5fc1f7b20ebeb7805276d276cbc3710a8/Keychain/Keychain.swift#L218-L235">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:8KeychainAAC5ErrorO12itemNotFoundA2DmF"></a>
                     <a name="//apple_ref/swift/Element/itemNotFound" class="dashAnchor"></a>
                     <a class="token" href="#/s:8KeychainAAC5ErrorO12itemNotFoundA2DmF">itemNotFound</a>
@@ -133,7 +192,7 @@ Keychain. It should be created first by calling
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/blochberger/Keychain/blob/2f21d2087bc51cba4bdf3af845a0ce6b52eba8fa/Keychain/Keychain.swift#L209">Show on GitHub</a>
+                        <a href="https://github.com/blochberger/Keychain/blob/0513c1c5fc1f7b20ebeb7805276d276cbc3710a8/Keychain/Keychain.swift#L242">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -170,7 +229,7 @@ not set.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/blochberger/Keychain/blob/2f21d2087bc51cba4bdf3af845a0ce6b52eba8fa/Keychain/Keychain.swift#L218">Show on GitHub</a>
+                        <a href="https://github.com/blochberger/Keychain/blob/0513c1c5fc1f7b20ebeb7805276d276cbc3710a8/Keychain/Keychain.swift#L251">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -203,7 +262,7 @@ the circumstances in
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/blochberger/Keychain/blob/2f21d2087bc51cba4bdf3af845a0ce6b52eba8fa/Keychain/Keychain.swift#L226">Show on GitHub</a>
+                        <a href="https://github.com/blochberger/Keychain/blob/0513c1c5fc1f7b20ebeb7805276d276cbc3710a8/Keychain/Keychain.swift#L259">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -216,7 +275,7 @@ the circumstances in
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/blochberger" target="_blank" rel="external">Maximilian Blochberger</a>. All rights reserved. (Last updated: 2018-08-10)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/blochberger" target="_blank" rel="external">Maximilian Blochberger</a>. All rights reserved. (Last updated: 2018-08-17)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
