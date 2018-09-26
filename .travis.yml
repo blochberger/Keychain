@@ -1,11 +1,12 @@
 language: swift
 os: osx
+osx_image: xcode10
+xcode_project: Keychain.xcodeproj
 
 matrix:
   include:
     - name: "macOS"
-      script:
-        - xcodebuild test -sdk macosx -project Keychain.xcodeproj -scheme Keychain_macOS
+      xcode_scheme: Keychain_macOS
     - name: "iOS"
       script:
-       - xcodebuild -sdk iphonesimulator -project Keychain.xcodeproj -scheme Keychain_iOS CODE_SIGNING_REQUIRED=NO
+       - set -o pipefail && xcodebuild -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.0,name=iPhone SE' -project Keychain.xcodeproj -scheme Keychain_iOS CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty
